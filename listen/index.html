@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listen</title>
+    <style>
+         *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+         }
+
+         body{
+            /* display: flex;
+            justify-content: center;
+            align-items: center; */
+            height: 100vh;
+            overflow-x: hidden;
+            font-family: sans-serif;
+            /* background-color: rgb(24, 93, 78); */
+            background-color: #1a3d40;
+         }
+
+         .all img{
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+         }
+
+         #backBtn{
+            position: relative;
+            top: 20px;
+            left: 10px;
+            color: #Fff;
+            text-decoration: none;
+            border: solid 2px red;
+            border-radius: 5px;
+            padding: 10px;
+         }
+    </style>
+</head>
+<body>
+    <a onclick="back()" id="backBtn" href="#">Back</a>
+    <div style="position: relative; top: 130px;" align="center" class="all">
+         <a href="https://mp3quran.net/ar/yasser"> <img id="yasso" width="150px" src="ياسر الدوسري.jpg" alt="yasser el dosary image"> </a>  <a href="https://mp3quran.net/ar/husr"> <img width="145px" src="محمود خليل الحصري.jpg" alt="mahmoud kalil el hosary"> </a> <a href="https://mp3quran.net/ar/maher"> <img width="133px" src="ماهر المعيقلي.jpg" alt="maher image"> </a>
+         <br>
+         <a href="https://mp3quran.net/ar/ajm"> <img width="150px" src="أحمد بن علي العجمي.jpg" alt="Ahmed el ajmy  image"> </a> <a href="https://mp3quran.net/ar/basit"> <img width="133px" src="عبد الباسط عبد الصمد.jpg" alt="Abed el baset abd el samad image"> </a> <a href="https://mp3quran.net/ar/sds"> <img width="150px" src="عبد الرحمن السديس.jpg" alt="el sedese image"> </a>
+         <br>
+         <a href="https://mp3quran.net/ar/minsh"> <img width="150px" src="محمد صديق المنشاوي 2.jpg" alt="el minshawy image"> </a> <a href="https://mp3quran.net/ar/qtm"> <img width="150px" src="ناصر القطامي.jpg" alt="naser el qatemy image"> </a> <a href="https://mp3quran.net/ar/bna"> <img width="150px" src="محمود علي البنا.jpg" alt="el banna image"> </a>
+         <br>
+         <a href="https://mp3quran.net/ar/kyat"> <img width="150px" src="عبد الله خياط.jpg" alt="abdullah el kaiat image"> </a> <a href="https://mp3quran.net/ar/frs_a"> <img width="150px" src="فارس عباد.jpg" alt="Fares abbad image"> </a> 
+    </div>
+
+    <script>
+        function back() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <title>ISLAMY</title>
+</head>
+<body>
+    <!--Mobile navbar-->
+    <div id="mobile-nav" class="mobile-nav">
+        <ul>
+            <a href="#"><li>Home</li></a>
+            <a href="athkar/index.html"><li>Athkar</li></a>
+            <a href="read/index.html"><li>Read</li></a>
+            <a href="listen/index.html"><li>Listen</li></a>
+            <a href="timer/index.html"><li>Ramdan timer</li></a>
+            <a href="pt/index.html"><li>Lawrance Prayer times</li></a>
+       </ul>
+    </div>
+
+    <!--Navbar-->
+       <nav>
+        <h1>ISLAMY</h1>
+             <ul>
+                  <li id="home-link"><a id="home-link" href="#">Home</a></li>
+                  <li><a href="athkar/index.html">Athkar</a></li>
+                  <li><a href="read/index.html">Read</a></li>
+                  <li><a href="listen/index.html">Listen</a></li>
+                  <li><a href="timer/index.html">Ramadan Timer</a></li>
+                  <li><a href="pt/index.html">Lawrance Prayer times</a></li>
+             </ul>
+             <a onclick="toggleMobileNav()" id="mi" href="#"><i id="menu-icon" class='bx bx-menu'></i></a>
+       </nav>
+
+       <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Welcome to Islamy</h2>
+            <p>Discover the beauty of Islam, read the Quran, and explore daily Athkar to uplift your soul.</p>
+            <p style="font-size: large;">By <a style="color: #fff;" href="https://www-13.github.io/Adam/">Adam Abed</a></p>
+            <a href="read/index.html" class="btn">Start Exploring</a>
+        </div>
+    </section>
+
+
+    
+
+    <script>
+          let menuBtn = document.getElementById('menu-icon');
+          let mobileNav = document.getElementById('mobile-nav');
+
+          function toggleMobileNav() {
+            if (mobileNav.style.display === 'none') {
+                mobileNav.style.display = 'block';
+            }else{
+                mobileNav.style.display = 'none';
+            }
+          }
+    </script>
+</body>
+</html>

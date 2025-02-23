@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+
+        <!-- Display Current Page -->
+        <div class="controls">
+            <button id="prevBtn">السابق</button>
+            <button id="nextBtn">التالي</button>
+            <span id="pageNumberText">الصفحة 50</span>
+            <input type="number" id="pageInput" placeholder="ادخل رقم الصفحة" min="1" max="604">
+            <select id="surahSelect">
+                <option value="">اختيار السورة</option>
+                <option value="1">الفاتحة</option>
+                <option value="2">البقرة</option>
+                <option value="3">آل عمران</option>
+               
+            </select>
+            <a id="idk" href="#">العودة</a>
+        </div>
+
+        <!-- Display Image -->
+        <div class="image-container">
+            <img id="quranPage" src="https://raw.githubusercontent.com/BetimShala/quran-images-api/refs/heads/master/quran-images/50.png" alt="Quran Page">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+/* Rest styles */
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    /* background-color:  rgb(24, 93, 78); */
+    background-color: #1a3d40;
+    font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+    overflow-x: hidden;
+    background-repeat: no-repeat;
+}
+
+/* Navbar styles */
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5rem;
+    margin-left: 2rem;
+}
+
+nav h1{
+    color: rgb(255, 181, 36);
+    font-size: 30px;
+    letter-spacing: 10px;
+    font-family: Tahoma;
+}
+
+nav li{
+    display: inline;
+    position: relative;
+}
+
+nav ul li::before{
+    content: '';
+    width: 0;
+    height: 2px;
+    background-color: orange;
+    position: absolute;
+    top: 30px;
+    right: 12px;
+    transition: 0.5s;
+}
+
+nav ul li:hover::before{
+    width: 100%;
+}
+
+nav ul li a{
+    margin-right: 2rem;
+    color: #fff;
+    text-decoration: none;
+    font-size: large;
+}
+
+nav ul li a:hover{
+    color: rgb(255, 181, 36);
+}
+
+#home-link{
+    color: rgb(255, 181, 36);
+}
+
+#home-link::before{
+    width: 100%;
+}
+
+/* Hero Section */
+.hero {
+    height: 80vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    padding: 0 2rem;
+}
+
+.hero-content h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: rgb(255, 181, 36);
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    background-color: rgb(255, 181, 36);
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: rgb(230, 160, 30);
+}
+
+#menu-icon{
+    color: rgb(230, 160, 30);
+    font-size: 40px;
+    cursor: pointer;
+    margin-right: 1rem;
+}
+
+#mi{
+    text-decoration: none;
+}
+
+/* Mobile navbar */
+
+.mobile-nav{
+    display: none;
+    height: 500px;
+    width: 100%;
+}
+
+.mobile-nav ul li{
+    width: 100%;
+    height: 70px;
+    margin-top: 10px;
+    border: solid 2px rgb(230, 160, 30);
+    background-color: rgb(230, 160, 30);
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: solid 1.5px #fff;
+}
+
+.mobile-nav ul a{
+    text-decoration: none;
+    color: #fff;
+    font-size: larger;
+}
+
+/* Responsie */
+@media screen and (max-width: 740px) {
+    nav ul{
+        display: none;
+    }
+}

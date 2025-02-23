@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إشعارات الصلاة</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #1a3d40; /* Dark teal background */
+            color: #fff; /* White text for contrast */
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #6DBE45; /* Lighter green to contrast with the background */
+            margin-top: 20px;
+        }
+
+        h2 {
+            font-size: 1.2em;
+            margin-top: 10px;
+            color: #B0C0B3; /* Light gray for secondary text */
+        }
+
+        #clock {
+            font-size: 2em;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        table {
+            width: 80%;
+            margin: 30px auto;
+            border-collapse: collapse;
+            background-color: #263C41; /* Darker shade for table background */
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: center;
+            border: 1px solid #4CAF50; /* Light green borders */
+        }
+
+        th {
+            background-color: #4CAF50; /* Green header */
+            color: white;
+            font-size: 1.1em;
+        }
+
+        td {
+            background-color: #344C51; /* Darker cell background */
+            color: #ddd; /* Lighter text inside cells */
+            font-size: 1em;
+        }
+
+        tr:hover {
+            background-color: #3C545A; /* Slightly lighter gray on hover */
+        }
+
+        @media (max-width: 768px) {
+            table {
+                width: 90%;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            h2 {
+                font-size: 1em;
+            }
+
+            #clock {
+                font-size: 1.5em;
+            }
+        }
+
+        #backBtn {
+            position: relative;
+            top: 10px;
+            color: #fff; /* White color for the back button */
+            text-decoration: none;
+            font-size: 1.1em;
+        }
+
+        #backBtn:hover {
+            color: #4CAF50; /* Green on hover */
+        }
+    </style>
+</head>
+<body>
+    <a onclick="back()" id="backBtn" href="#">Back</a>
+    <h1>Lawrance اوقات الصلاة في</h1>
+    <h2>الوقت الحالي: <span id="clock"></span></h2>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>الصلاة</th>
+                <th>الوقت</th>
+                <th>عدد الركعات</th>
+            </tr>
+        </thead>
+        <tbody id="times-list">
+        </tbody>
+    </table>
+
+    <script>
+        const prayerTimes = {
+            Fajr: "05:23",
+            Dhuhr: "12:45",
+            Asr: "15:34",
+            Maghrib: "18:00",
+            Isha: "19:19"
+        };
+
+        const nawafil = {
+            Fajr: 2,
+            Dhuhr: 4,
+            Asr: 4,
+            Maghrib: 3,
+            Isha: 4
+        };
+
+        const timesList = document.getElementById("times-list");
+        for (let [prayer, time] of Object.entries(prayerTimes)) {
+            const li = document.createElement("tr");
+            li.innerHTML = ` 
+                <td>${prayer}</td>
+                <td>${time}</td>
+                <td>${nawafil[prayer]}</td>
+            `;
+            timesList.appendChild(li);
+        }
+
+        if ('Notification' in window) {
+            Notification.requestPermission().then(function(permission) {
+                console.log('Notification permission:', permission);
+            });
+        }
+
+        function sendNotification(message) {
+            if (Notification.permission === "granted") {
+                new Notification("تذكير الصلاة", {
+                    body: message
+                });
+            }
+        }
+
+        function checkPrayerTimes() {
+            const now = new Date();
+            const hours = now.getHours();
+            const minutes = now.getMinutes();
+            const currentTime = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
+
+            for (let [prayer, time] of Object.entries(prayerTimes)) {
+                if (currentTime === time) {
+                    sendNotification(`حان وقت الصلاة: ${prayer}`);
+                }
+            }
+        }
+
+        function updateClock() {
+            const now = new Date();
+            const hours = now.getHours();
+            const minutes = now.getMinutes();
+            const seconds = now.getSeconds();
+            document.getElementById("clock").textContent = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }
+
+        setInterval(updateClock, 1000);
+        setInterval(checkPrayerTimes, 60000);
+
+        function back() {
+            window.history.back();
+        }
+
+        console.log(typeof localStorage.getItem("mno"))
+    </script>
+</body>
+</html>

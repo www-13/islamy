@@ -1,0 +1,114 @@
+/* General reset and box-sizing */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: 'Cairo', sans-serif; /* Modern Arabic font */
+    /* background: linear-gradient(135deg, #006d3f, #004b2d); Gradient background for a more elegant look */
+    background-color: #1a3d40;
+    color: white;
+    text-align: center; /* Center text */
+    direction: rtl; /* Right-to-left text */
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    overflow-x: hidden;
+}
+
+/* Container for all content */
+.container {
+    background: rgba(0, 0, 0, 0.6); /* Dark translucent background */
+    border-radius: 15px; /* Rounded corners */
+    padding: 50px;
+    width: 90%;
+    max-width: 990px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); /* Soft shadow for depth */
+}
+
+/* Heading */
+h1 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    color: #f4e542; /* A beautiful golden color for the title */
+    text-transform: uppercase;
+}
+
+/* Countdown text */
+#countdown p {
+    font-size: 22px;
+    margin-bottom: 20px;
+    font-weight: 300;
+    color: #fff;
+}
+
+/* Timer box */
+.timer {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 36px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-top: 20px;
+}
+
+@media screen and (max-width: 912px) {
+    .timer{
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+    .container{
+        padding: 10px;
+    }
+}
+
+.time-box {
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for each time box */
+    transition: background-color 0.3s ease;
+}
+
+.time-box:hover {
+    background-color: rgba(255, 255, 255, 0.3); /* Slight highlight when hovering */
+}
+
+/* Back button styling */
+#back-button {
+    background-color: #f4e542; /* Golden color for the button */
+    color: #333;
+    border: none;
+    padding: 12px 25px;
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 30px;
+    border-radius: 50px; /* Rounded edges */
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+#back-button:hover {
+    background-color: #d4c23f; /* Darker golden color */
+    transform: translateY(-3px); /* Slightly raised effect */
+}
+
+#back-button:focus {
+    outline: none; /* Remove default focus outline */
+}
